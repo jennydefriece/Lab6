@@ -410,16 +410,7 @@ public class PokerTableController implements Initializable {
 
 		}
 
-		if (HubPokerGame.geteGameState() == eGameState.FINISHED) {
-			Action act = new Action(eAction.ScoreGame, mainApp.getPlayer());
-			// Send the Action to the Hub
-			mainApp.messageSend(act);
-		} else if (HubPokerGame.geteGameState() == eGameState.SCORED) {
-			lblWinningPlayer.setText(HubPokerGame.GetWinningHand().getHandPlayer().getPlayerName());
-			HandScore hs = HubPokerGame.GetWinningHand().getHandScore();
-			lblWinningHand.setText(eHandStrength.geteHandStrength(hs.getHandStrength()).toString() + " "
-					+ eRank.geteRank(hs.getHiHand()).toString());
-		}
+		
 	}
 
 	/**
